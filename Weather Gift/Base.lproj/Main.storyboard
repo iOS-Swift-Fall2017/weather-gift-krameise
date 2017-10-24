@@ -135,7 +135,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Gwn-de-552"/>
-                                    <barButtonItem systemItem="add" id="YlO-3E-fk7"/>
+                                    <barButtonItem systemItem="add" id="YlO-3E-fk7">
+                                        <connections>
+                                            <action selector="addBarButtonPressed:" destination="tQO-EL-EPh" id="1LE-vV-vjW"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
