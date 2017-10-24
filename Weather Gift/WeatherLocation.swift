@@ -11,14 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 
-struct WeatherLocation {
+class WeatherLocation {
     var name = ""
     var coordinates = ""
     var currentTemp = "--"
     
-    mutating func getWeather(completed: @escaping() -> ()) {
+    func getWeather(completed: @escaping() -> ()) {
         let weatherURL = urlBase + urlAPIKey + coordinates
-        print(weatherURL)
         
         Alamofire.request(weatherURL).responseJSON(){ response in
             switch response.result {
@@ -28,15 +27,13 @@ struct WeatherLocation {
                     let roundedTemp = String(format: "%3.f", temperature)
                     self.currentTemp = roundedTemp + "°"
                 } else {
-                    print("Could not return a temperature")
+                    print("Could not return a temperature.")
                 }
-                
             case .failure(let error):
                 print(error)
             }
             completed()
         }
-
     }
 }
     

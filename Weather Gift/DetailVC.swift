@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+
 class DetailVC: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -94,7 +95,6 @@ extension DetailVC: CLLocationManagerDelegate {
             }
         })
     }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to get user location.")
     }
