@@ -21,9 +21,6 @@ class WeatherLocation {
         var dailyIcon: String
         
     }
-    
-    
-    
     var name = ""
     var coordinates = ""
     var currentTemp = "--"
@@ -43,7 +40,7 @@ class WeatherLocation {
                 let json = JSON(value)
                 if let temperature = json["currently"]["temperature"].double {
                     let roundedTemp = String(format: "%3.f", temperature)
-                    self.currentTemp = roundedTemp + "°"
+                self.currentTemp = roundedTemp + "°"
                 } else {
                     print("Could not return a temperature.")
                 }
@@ -78,9 +75,6 @@ class WeatherLocation {
                     let newDailyForecast = DailyForecast(dailyMaxTemp: maxTemp, dailyMinTemp: minTemp, dailyDate: dateValue, dailySummary: dailySummary, dailyIcon: icon)
                    self.dailyForecastArray.append(newDailyForecast)
                 }
-                
-                
-                
             case .failure(let error):
                 print(error)
             }
